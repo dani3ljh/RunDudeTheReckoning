@@ -5384,6 +5384,14 @@ MonoBehaviour:
     loop: 0
     playOnStart: 0
     source: {fileID: 0}
+  - name: Main Menu Theme
+    clip: {fileID: 8300000, guid: 8fa298ee457fe6646855b242353814f3, type: 3}
+    type: 0
+    pitch: 1
+    volume: 1
+    loop: 1
+    playOnStart: 1
+    source: {fileID: 0}
 --- !u!114 &816854981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5396,7 +5404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beebae0fb83d6454aa0efd1468f9e1b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundName: Play Button
+  playButtonSoundName: Play Button
+  menuThemeSoundName: Main Menu Theme
   playButton: {fileID: 750166338}
   ls: {fileID: 417810753}
 --- !u!1 &1016258866

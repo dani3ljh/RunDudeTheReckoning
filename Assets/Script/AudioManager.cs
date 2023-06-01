@@ -24,13 +24,37 @@ public class AudioManager : MonoBehaviour
     public float PlaySound(string name)
     {
         Sound s = System.Array.Find(sounds, sound => sound.name == name);
-        if(s == null)
-        {
+
+        if(s == null) {
             Debug.LogWarning($"Sound {name} not found!");
             return 0f;
         }
+
         s.source.Play();
         return s.clip.length;
+    }
+
+    public Sound GetSound(string name)
+    {
+        Sound s = System.Array.Find(sounds, sound => sound.name == name);
+
+        if(s == null) {
+            Debug.LogWarning($"Sound {name} not found!");
+        }
+
+        return s;
+    }
+
+    public void StopSound(string name)
+    {
+        Sound s = System.Array.Find(sounds, sound => sound.name == name);
+
+        if(s == null) {
+            Debug.LogWarning($"Sound {name} not found!");
+            return;
+        }
+
+        s.source.Stop();
     }
 }
 

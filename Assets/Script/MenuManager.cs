@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] private string soundName;
+    [SerializeField] private string playButtonSoundName;
+    [SerializeField] private string menuThemeSoundName;
     [SerializeField] private Button playButton;
     [SerializeField] private LoadingScreen ls;
 
@@ -21,7 +22,9 @@ public class MenuManager : MonoBehaviour
     {
         playButton.interactable = false;
 
-        float timeToPlaySound = am.PlaySound(soundName);
+        am.StopSound(menuThemeSoundName);
+        
+        float timeToPlaySound = am.PlaySound(playButtonSoundName);
 
         int newSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
 
