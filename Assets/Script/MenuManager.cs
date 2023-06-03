@@ -6,8 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    [Header("Settings")]
     [SerializeField] private string playButtonSoundName;
     [SerializeField] private string menuThemeSoundName;
+    [SerializeField] private float sceneLoadDelay = 0.5f;
+
+    [Header("Objects")]
     [SerializeField] private Button playButton;
     [SerializeField] private LoadingScreen ls;
 
@@ -28,6 +32,6 @@ public class MenuManager : MonoBehaviour
 
         int newSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
 
-        ls.StartLoadScreen(newSceneIndex, timeToPlaySound);
+        ls.StartLoadScreen(newSceneIndex, timeToPlaySound + sceneLoadDelay);
     }
 }
